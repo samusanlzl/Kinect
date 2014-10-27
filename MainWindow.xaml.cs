@@ -83,7 +83,7 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
         private DrawingImage imageSource;
 
 
-        private KneelingPosition pos = new KneelingPosition();
+        private KneelingPosition pos;
 
         /// <summary>
         /// Initializes a new instance of the MainWindow class.
@@ -346,7 +346,7 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
                 return;
             }
             Pen drawPen;
-            
+            pos = new KneelingPosition(skeleton);
             
             bool cPos = pos.correctPosition(skeleton, 30);
             // We assume all drawn bones are inferred unless BOTH joints are tracked
